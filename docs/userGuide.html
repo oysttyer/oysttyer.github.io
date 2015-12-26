@@ -1,0 +1,603 @@
+<h1 id="oysttyer-user-guide">oysttyer User Guide</h1>
+<pre><code>     .#*^#=.                
+     %&#39;.,`.#`               
+   ;&#39;,. ./#`                                                   
+  ({.`,` #/                 
+  `&amp; ,` %,~=*&#39;&quot;*=~=-.,      
+   \`=_/&#39;.``  -  `&#39;.  *\.                                      
+    (%.  -  -      ˋ-. `&amp;   
+    `&amp;`  ~     @      . #                                       
+     `\`. `    .....ˊ  %&#39;   
+       `^~._.,,,.-+=~*&#39;                                            
+            ````&#39;&#39;&#39;         
+                            
+  _      _             _     
+ /.\ | ||_  |_ |_ | | /_\|&#39;`                                 
+ \_/ \_| _|&#39;|_&#39;|_ \_| \_ |                                   
+       |            |       
+       </code></pre>
+<ul>
+<li><a href="#start">Getting started</a>
+<ul>
+<li><a href="#getcode">Getting the code</a></li>
+<li><a href="#apikey">Generating your API key</a></li>
+<li><a href="#switching">Switching from TTYtter</a></li>
+</ul></li>
+<li><a href="#usage">Basic usage</a>
+<ul>
+<li><a href="#commands">Commands</a></li>
+</ul></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#contributing">Feedback and contributing</a></li>
+</ul>
+<h2 id="start">
+Getting started
+</h2>
+<p>Welcome to <a href="http://oysttyer.github.io/">oysttyer</a>, a console-based Twitter client written in Perl. This guide describes the basic use of oysttyer. If anything is unclear, incorrect, or missing, please <a href="#contributing">let us know</a>.</p>
+<h3 id="getcode">
+Getting the code
+</h3>
+<p>oysttyer is a single Perl script. You will, of course, need a Perl interpreter and also cURL (included by default on most Linux and Unix distributions). You may also want <a href="http://search.cpan.org/~ckaiser/Term-ReadLine-TTYtter-1.4/">Term::Readline::TTYtter</a> in order to take advantage of some of the more colorful things oysttyer can do.</p>
+<p>There are two options for getting oysttyer: a &quot;stable&quot; release version and the latest development version. In practice, there is not much difference between the two since new releases happen quickly after bugs are fixed or features are added and development changes are (we hope!) not going to break anything.</p>
+<p>To get the stable release, go to the <a href="https://github.com/oysttyer/oysttyer">GitHub repository</a> and click &quot;Releases&quot; download the most recent release and extract it.</p>
+<p>To get the latest development version oysttyer, you can clone the <a href="https://github.com/oysttyer/oysttyer">GitHub repository</a> or simply download the raw oysttyer.pl file.</p>
+<h3 id="apikey">
+Generating your API key
+</h3>
+<p>Before you can get started, you should generate an API key. The key built in to oysttyer is frequently blocked by Twitter, so using your own key is adviseable.</p>
+<ol style="list-style-type: decimal">
+<li>Log in to the (Twitter Application Management page)[https://apps.twitter.com/] with your Twitter user name and password</li>
+<li>Click <em>Create New App</em></li>
+<li>Fill out the new app form:
+<ul>
+<li>Name -- The globally unique name for your application. We suggest something like &quot;oysttyer (YourCoolTwitterHandle)&quot;</li>
+<li>Description -- Please use &quot;An interactive console text-based command-line Twitter client written in Perl&quot;</li>
+<li>Website -- Please use &quot;http://oysttyer.github.io/&quot;</li>
+<li>Callback URL -- (leave blank)</li>
+</ul></li>
+<li>Check the box to agree to the developer agreement and click <em>Create Your Twitter Application</em></li>
+<li>Update your application to be able to send and receive direct messages
+<ul>
+<li>Click the <em>Permissions</em> tab</li>
+<li>Select <em>Read, Write and Access direct messages</em></li>
+<li>Click <em>Update application</em></li>
+</ul></li>
+<li>Get your keys
+<ul>
+<li>Click the <em>Key and Access Tokens</em> tab</li>
+<li>Note the <em>Consumer Key (API Key)</em> and <em>Consumer Secret (API Secret)</em>.</li>
+</ul></li>
+</ol>
+<p>Now that you have your keys, you can authorize oysttyer. Your key and secret can be passed on the command line or in your <a href="#configuration">configuration file</a>. An example of using it on the command line is:</p>
+<pre><code>perl ./oysttyer.pl -oauthkey=nZdXCxVtQTsFJaybAr9OjApd0 -oauthsecret=ujN4ilao663PyDDgObkk0N6EIbAxxxG7MGoK2Yq7nzLLfOxZjE</code></pre>
+<p>Similarly, the configuration file settings are <code>oauthkey</code> and <code>oauthsecret</code> for the Consumer Key and Consumer Secret respectively.</p>
+<p>A third option is to generate your token and secret from the Application Management website and write that directly to the .oysttyerkey file:</p>
+<pre><code>ck=X&amp;cs=X&amp;at=YOUR_ACCESS_TOKEN&amp;ats=YOUR_ACCESS_TOKEN_SECRET</code></pre>
+<h3 id="switching">
+Switching from TTYTter
+</h3>
+<p>If you previously used TTYtter, you should find oysttyer very familiar. A few steps are necessary to make the switch:</p>
+<ol style="list-style-type: decimal">
+<li>You have to re-authorise (you can't use your .ttytterkey) as we have a new API key</li>
+<li>Move/rename your .ttytterc file to .oysttyerrc</li>
+<li>If you use the ttytteristas pref it is now called oysttyeristas</li>
+<li>Read the Changelog to see what's new since TTYtter 2.1</li>
+</ol>
+<h2 id="usage">
+Basic usage
+</h2>
+<p>To start using oysttyer, run <code>perl ./oysttyer.pl</code> in the directory where you've downloaded osytter.pl. Soon tweets start spewing forth. Each tweet is displayed with an menu code (internal to oysttyer) and the username. For example:</p>
+<pre><code>h8&gt; &lt;FunnelFiasco&gt; I just really like writing documentation.</code></pre>
+<p>Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a d and search results (including threads, <code>/again</code>, etc) which prepend a z.</p>
+<p>The username may also be prepended with special characters that give you more information about a tweet.</p>
+<table id="decorators">
+<tr>
+<th>
+Decorator
+</th>
+<th>
+Meaning
+</th>
+</tr>
+<tr>
+<td>
+@
+</td>
+<td>
+Tweet is in reply to another tweet
+</td>
+</tr>
+<tr>
+<td>
+&quot;
+</td>
+<td>
+Tweet quotes the tweet below
+</td>
+</tr>
+<tr>
+<td>
+↑
+</td>
+<td>
+Tweet was quoted by the tweet above</td</tr>
+<tr>
+<td>
+%
+</td>
+<td>
+Tweet was retweeted into your timeline
+</td>
+</tr>
+<tr>
+<td>
++
+</td>
+<td>
+Tweet has location information
+</td>
+</tr>
+</table>
+<p>Ready to tweet? Just type your tweet and hit enter. But simply broadcasting is no fun (even if it's your personal #brand). Interaction is what makes twitter enjoyable. The <a href="#commands">commands</a> section below describes how you can interact.</p>
+<h3 id="commands">
+Commands
+</h3>
+<p>oysttyer provides many commands, all of which begin with <code>/</code>. For the sake of your followers, anything that starts with <code>/</code> is treated as a command and oysttyer will let you know if it doesn't recognize it. If you want to start a tweet with <code>/</code>, double it (<code>//</code>). The tables below describe most of the oysttyer commands, in hopefully-helpful sections:</p>
+<ul>
+<li><a href="#commands-oysttyer">oysttyer commands</a></li>
+<li><a href="#commands-tweet">tweet commands</a></li>
+<li><a href="#commands-user">user commands</a></li>
+<li><a href="#commands-list">list commands</a></li>
+</ul>
+<p>Commands that return multiple responses default to 20, but that can be adjusted by specifying +<em>N</em> after the command name. For example:</p>
+<pre><code>/dmagain +5</code></pre>
+<p>will only give you your last 5 direct messages, instead of the last 20.</p>
+<h4 id="commands-oysttyer">
+oysttyer commands
+<h4>
+<table>
+<tr>
+<th>
+Command
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+/! <em>shell command</em>
+</td>
+<td>
+Run <em>shell command</em> in a subprocess
+</td>
+</tr>
+<tr>
+<td>
+/add <em>key</em> <em>value</em>
+</td>
+<td>
+Add <em>value</em> to <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/cls
+</td>
+<td>
+Clear the screen
+</td>
+<tr>
+<td>
+/del <em>key</em> <em>value</em>
+</td>
+<td>
+Remove <em>value</em> from <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/help
+</td>
+<td>
+Display help
+</td>
+</tr>
+<tr>
+<td>
+/history
+</td>
+<td>
+Display your command history
+</td>
+</tr>
+<tr>
+<td>
+/pop <em>key</em>
+</td>
+<td>
+Pop the first value off of <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/print <em>[key]</em>
+</td>
+<td>
+Display all settings (or the value of <em>key</em>, if specified)
+</td>
+</tr>
+<tr>
+<td>
+/push <em>key</em> <em>value</em>
+</td>
+<td>
+Push <em>value</em> onto the stack for <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/ruler
+</td>
+<td>
+Print a &quot;ruler&quot; of 140 characters
+</td>
+</tr>
+<tr>
+<td>
+/set <em>key</em> <em>value</em>
+</td>
+<td>
+Set <em>key</em> to <em>value</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/unset <em>[key]</em>
+</td>
+<td>
+Unsets <em>key</em>(see the <a href="#runtime">runtime configuration section</a> for more information)
+</td>
+</tr>
+<tr>
+<td>
+/vcheck
+</td>
+<td>
+Check to see if you're running the latest version
+</td>
+</tr>
+<tr>
+<td>
+/quit
+</td>
+<td>
+Exit oysttyer
+</td>
+</tr>
+</table>
+<h4 id="commands-tweet">
+Tweet commands
+</h4>
+<table>
+<tr>
+<th>
+Command
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+/re <em>menu code</em>
+</td>
+<td>
+Reply to tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/ra <em>menu code</em>
+</td>
+<td>
+Reply to all users in tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/rt <em>menu code</em> <em>[message]</em>
+</td>
+<td>
+Retweet tweet <em>menu code</em>. If a message is specified, quote tweet <em>menu code</em>
+</td>
+<tr>
+<tr>
+<td>
+/like <em>menu code</em>
+</td>
+<td>
+Like tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/unlike <em>menu code</em>
+</td>
+<td>
+Remove like for tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/lrt <em>menu code</em>
+</td>
+<td>
+Like and retweet tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/thread <em>menu code</em>
+</td>
+<td>
+Displays the thread for tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/again <em>[username]</em>
+</td>
+<td>
+Displays the recent tweets for <em>username</em> (if none is specified, shows recent tweets in your timeline again)
+</td>
+</tr>
+<tr>
+<td>
+/deletelast
+</td>
+<td>
+Deletes your last tweet
+</td>
+</tr>
+<tr>
+<td>
+/delete <em>menu code</em>
+</td>
+<td>
+Deletes tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/dump <em>menu code</em>
+</td>
+<td>
+Display all data for tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/dm <em>username</em> <em>message</em>
+</td>
+<td>
+Send a direct message to <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/dmsent
+</td>
+<td>
+Display direct messages you have sent
+</td>
+</tr>
+<tr>
+<td>
+/dmagain
+</td>
+<td>
+Display direct messages sent you you
+</td>
+</tr>
+<tr>
+<td>
+/dmrefresh
+</td>
+<td>
+Check for new direct messages
+</td>
+</tr>
+<tr>
+<td>
+/entities <em>menu code</em>
+</td>
+<td>
+Display the expanded t.co links in tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/search <em>keyword</em>
+</td>
+<td>
+Search public tweets for <em>keyword</em>
+</td>
+</tr>
+<tr>
+<td>
+/refresh
+</td>
+<td>
+Check for new tweets
+</td>
+</tr>
+<tr>
+<td>
+/rtsof <em>menu code</em>
+</td>
+<td>
+List accounts that retweeted tweet <em>menu code</em>
+</td>
+</tr>
+<tr>
+<td>
+/rtsofme
+</td>
+<td>
+List your tweets that others have retweeted
+</td>
+</tr>
+<tr>
+<td>
+/track <em>keywords</em>
+</td>
+<td>
+Search for <em>keywords</em> in addition to your normal timeline
+</td>
+</tr>
+<tr>
+<td>
+/tron <em>keywords</em>
+</td>
+<td>
+Add additional keywords to <code>/track</code>
+</td>
+</tr>
+<tr>
+<td>
+/troff <em>keywords</em>
+</td>
+<td>
+Stop <code>/track</code>ing <em>keywords</em>
+</td>
+</tr>
+<tr>
+<td>
+/trends
+</td>
+<td>
+List the current trending topics
+</td>
+</tr>
+<tr>
+<td>
+/url <em>menu code</em>
+</td>
+<td>
+Display the URLs in tweet <em>menu code</em> and open in the application defined by the <code>urlopen</code> option
+</td>
+</tr>
+</table>
+<h4 id="commands-user">
+User commands
+</h4>
+<table>
+<tr>
+<th>
+Command
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+/follow <em>username</em></tdn>
+<td>
+Start following <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/unfollow <em>username</em>
+</td>
+<td>
+Stop following <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/leave <em>username</em>
+</td>
+<td>
+Alias for <code>/unfollow</code>
+</td>
+</tr>
+<tr>
+<td>
+/block <em>username</em>
+</td>
+<td>
+Block <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/unblock <em>username</em>
+</td>
+<td>
+Un-block <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/mute <em>username</em>
+</td>
+<td>
+Mute <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/unmute <em>username</em>
+</td>
+<td>
+Un-mute <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/whois <em>username</em>
+</td>
+<td>
+Display information for <em>username</em>
+</td>
+</tr>
+<tr>
+<td>
+/doesfollow <em>username</em> <em>[seconduser]</em>
+</td>
+<td>
+Check if a user follows another (if a second account is not specified, it checks if the user follows you)
+</td>
+</tr>
+<tr>
+<td>
+/friends <em>[username]</em>
+</td>
+<td>
+Get a list of the user's friends (if an account is not specified, it lists your friends)
+</td>
+</tr>
+<tr>
+<td>
+/followers <em>[username]</em>
+</td>
+<td>
+Get a list of the user's followers (if an account is not specified, it lists your followers)
+</td>
+</tr>
+</table>
+<h4 id="commands-list">
+List commands
+</h4>
+<p>This section is not yet written</p>
+<h2 id="configuration">
+Configuration
+</h2>
+<p>This section is not yet written</p>
+<h2 id="contributing">
+Contributing
+</h2>
+<p>This section is not yet written</p>
