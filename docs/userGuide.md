@@ -24,6 +24,7 @@
     * [Switching from TTYtter](#switching)
 * [Basic usage](#usage)
     * [Commands](#commands)
+* [Command Line Options](#command-line)
 * [Configuration](#configuration)
 * [Feedback and contributing](#contributing)
 
@@ -189,6 +190,22 @@ will only give you your last 5 direct messages, instead of the last 20.
 <h4 id="commands-list">List commands</h4>
 
 This section is not yet written
+
+<h2 id="command-line">Command Line Options</h2>
+
+Oysttyer inherates many commands from ttytter. The full list of commands supported by ttytter is [documented here](http://www.floodgap.com/software/ttytter/copts.html) but
+here are some of the most useful ones:
+
+<table>
+<tr><th>Command</th><th>Description</th><th>Example</th></tr>
+<tr><td>-keyf</td><td> Location of config file </td><td> -keyf=mykeyfile</td></tr> 
+<tr><td> -status </td><td> Tweet directly from the command line </td><td> -status="I'm on a boat" </td></tr>
+<tr><td> -verbose </td><td> Give more debugging information </td><td> -verbose </td></tr>
+<tr><td> -location </td><td> Set your location - Note: you must enable tweet locations on the web interface </td><td> -location  </td></tr>
+<tr><td> -lat </td><td> latitude in decimal </td><td> -lat=-43.55522919 </td></tr>
+<tr><td> -long </td><td> longitude in decimal </td><td> -long=172.4193726  </td></tr>
+<tr><td> -script </td><td> Forces mode designed for being called via a script file, with minimal output </td><td> -script  </td></tr>
+</table>
 
 <h2 id="configuration">Configuration</h2>
 
