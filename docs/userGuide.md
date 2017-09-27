@@ -193,8 +193,8 @@ This section is not yet written
 
 <h2 id="command-line">Command Line Options</h2>
 
-Oysttyer inherates many commands from ttytter. The full list of commands supported by ttytter is [documented here](http://www.floodgap.com/software/ttytter/copts.html) but
-here are some of the most useful ones:
+Oysttyer inherits many commands from ttytter. The full list of commands supported by ttytter is [documented here](http://www.floodgap.com/software/ttytter/copts.html) but
+some of the more useful ones are:
 
 <table>
 <tr><th>Command</th><th>Description</th><th>Example</th></tr>
