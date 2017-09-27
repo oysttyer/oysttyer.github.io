@@ -198,7 +198,8 @@ here are some of the most useful ones:
 
 <table>
 <tr><th>Command</th><th>Description</th><th>Example</th></tr>
-<tr><td>-keyf</td><td> Location of config file </td><td> -keyf=mykeyfile</td></tr> 
+<tr><td> -rc </td><td> Location of config file </td><td> -keyf=oysttyerrc</td></tr> 
+<tr><td> -keyf </td><td> Location of Key file </td><td> -keyf=mykeyfile</td></tr> 
 <tr><td> -status </td><td> Tweet directly from the command line </td><td> -status="I'm on a boat" </td></tr>
 <tr><td> -verbose </td><td> Give more debugging information </td><td> -verbose </td></tr>
 <tr><td> -location </td><td> Set your location - Note: you must enable tweet locations on the web interface </td><td> -location  </td></tr>
