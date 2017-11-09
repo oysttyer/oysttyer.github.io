@@ -85,7 +85,7 @@ If you previously used TTYtter, you should find oysttyer very familiar. A few st
 3. If you use the ttytteristas pref it is now called oysttyeristas
 4. Read the [Changelog][changelog] to see what's new since TTYtter 2.1
 
-  [changelog]: https://github.com/gustafe/oysttyer/blob/master/CHANGELOG.markdown
+  [changelog]: https://github.com/oysttyer/oysttyer/blob/master/CHANGELOG.markdown
 
 <h2 id="usage">Basic usage</h2>
 
