@@ -170,6 +170,7 @@ will only give you your last 5 direct messages, instead of the last 20.
 <tr><td>/troff <em>keywords</em></td><td>Stop <code>/track</code>ing <em>keywords</em></td></tr>
 <tr><td>/trends</td><td>List the current trending topics</td></tr>
 <tr><td>/url <em>menu code</em></td><td>Display the URLs in tweet <em>menu code</em> and open in the application defined by the <code>urlopen</code> option</td></tr>
+<tr><td>/web <em>menu code</em></td><td>Display the URL to tweet <em>menu code</em></td></tr>
 </table>
 
 <h4 id="commands-user">User commands</h4>
