@@ -11,12 +11,12 @@
          `\`. `    .....ˊ  %'   
            `^~._.,,,.-+=~*'                                            
                 ````'''         
-                                
+
       _      _             _     
      /.\ | ||_  |_ |_ | | /_\|'`                                 
      \_/ \_| _|'|_'|_ \_| \_ |                                   
            |            |       
-           
+
 
 * [Getting started](#start)
     * [Getting the code](#getcode)
@@ -45,7 +45,7 @@ To get the latest development version oysttyer, you can clone the [GitHub reposi
 
   [repo]: https://github.com/oysttyer/oysttyer
   [raw_pl]: https://raw.githubusercontent.com/oysttyer/oysttyer/master/oysttyer.pl
-  
+
 <h3 id="apikey">Generating your API key</h3>
 
 Before you can get started, you should generate an API key. The key built in to oysttyer is frequently blocked by Twitter, so using your own key is adviseable.
@@ -69,13 +69,13 @@ Before you can get started, you should generate an API key. The key built in to 
 Now that you have your keys, you can authorize oysttyer. Your key and secret can be passed on the command line or in your [configuration file](#configuration). An example of using it on the command line is:
 
     perl ./oysttyer.pl -oauthkey=nZdXCxVtQTsFJaybAr9OjApd0 -oauthsecret=ujN4ilao663PyDDgObkk0N6EIbAxxxG7MGoK2Yq7nzLLfOxZjE
-   
+
 Similarly, the configuration file settings are `oauthkey` and `oauthsecret` for the Consumer Key and Consumer Secret respectively.
 
 A third option is to generate your token and secret from the Application Management website and write that directly to the .oysttyerkey file:
 
     ck=X&cs=X&at=YOUR_ACCESS_TOKEN&ats=YOUR_ACCESS_TOKEN_SECRET
-   
+
 <h3 id="switching">Switching from TTYTter</h3>
 
 If you previously used TTYtter, you should find oysttyer very familiar. A few steps are necessary to make the switch:
@@ -83,7 +83,9 @@ If you previously used TTYtter, you should find oysttyer very familiar. A few st
 1. You have to re-authorise (you can't use your .ttytterkey) as we have a new API key
 2. Move/rename your .ttytterc file to .oysttyerrc
 3. If you use the ttytteristas pref it is now called oysttyeristas
-4. Read the Changelog to see what's new since TTYtter 2.1
+4. Read the [Changelog][changelog] to see what's new since TTYtter 2.1
+
+  [changelog]: https://github.com/gustafe/oysttyer/blob/master/CHANGELOG.markdown
 
 <h2 id="usage">Basic usage</h2>
 
@@ -104,7 +106,7 @@ The username may also be prepended with special characters that give you more in
 <tr><td>+</td><td>Tweet has location information</td></tr>
 </table>
 
-Ready to tweet? Just type your tweet and hit enter. But simply broadcasting is no fun (even if it's your personal #brand). Interaction is what makes twitter enjoyable. The [commands](#commands) section below describes how you can interact. 
+Ready to tweet? Just type your tweet and hit enter. But simply broadcasting is no fun (even if it's your personal #brand). Interaction is what makes twitter enjoyable. The [commands](#commands) section below describes how you can interact.
 
 <h3 id="commands">Commands</h3>
 
@@ -118,7 +120,7 @@ oysttyer provides many commands, all of which begin with `/`. For the sake of yo
 Commands that return multiple responses default to 20, but that can be adjusted by specifying +*N* after the command name. For example:
 
     /dmagain +5
-    
+
 will only give you your last 5 direct messages, instead of the last 20.
 
 <h4 id="commands-oysttyer">oysttyer commands<h4>
