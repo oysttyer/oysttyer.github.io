@@ -93,7 +93,7 @@ To start using oysttyer, run `perl ./oysttyer.pl` in the directory where you've 
 
     h8> <FunnelFiasco> I just really like writing documentation.
 
-Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a d and search results (including threads, `/again`, etc) which prepend a z.
+Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a `d` and search results (including threads, `/again`, etc) which prepend a `z`.
 
 The username may also be prepended with special characters that give you more information about a tweet.
 
@@ -123,21 +123,22 @@ Commands that return multiple responses default to 20, but that can be adjusted 
 
 will only give you your last 5 direct messages, instead of the last 20.
 
-<h4 id="commands-oysttyer">oysttyer commands<h4>
+<h4 id="commands-oysttyer">oysttyer commands</h4>
+
 <table>
 <tr><th>Command</th><th>Description</th></tr>
-<tr><td>/! *shell command*</td><td>Run *shell command* in a subprocess</td></tr>
-<tr><td>/add <em>key</em> <em>value</em></td><td>Add <em>value</em> to <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/! <em>shell command</em></td><td>Run <em>shell command</em> in a subprocess</td></tr>
+<tr><td>/add <em>key</em> <em>value</em></td><td>Add <em>value</em> to <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/cls</td><td>Clear the screen</td>
-<tr><td>/del <em>key</em> <em>value</em></td><td>Remove <em>value</em> from <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/del <em>key</em> <em>value</em></td><td>Remove <em>value</em> from <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/help</td><td>Display help</td></tr>
 <tr><td>/history</td><td>Display your command history</td></tr>
-<tr><td>/pop <em>key</em></td><td>Pop the first value off of <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/pop <em>key</em></td><td>Pop the first value off of <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/print <em>key</em></td><td>Display all settings (or the value of <em>key</em>, if specified)</td></tr>
-<tr><td>/push <em>key</em> <em>value</em></td><td>Push <em>value</em> onto the stack for <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/push <em>key</em> <em>value</em></td><td>Push <em>value</em> onto the stack for <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/ruler</td><td>Print a "ruler" of 140 characters</td></tr>
-<tr><td>/set <em>key</em> <em>value</em></td><td>Set <em>key</em> to <em>value</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
-<tr><td>/unset <em>key</em></td><td>Unsets <em>key</em>(see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/set <em>key</em> <em>value</em></td><td>Set <em>key</em> to <em>value</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
+<tr><td>/unset <em>key</em></td><td>Unsets <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/vcheck</td><td>Check to see if you're running the latest version</td></tr>
 <tr><td>/quit</td><td>Exit oysttyer</td></tr>
 </table>
