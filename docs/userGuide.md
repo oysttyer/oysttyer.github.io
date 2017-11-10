@@ -50,7 +50,7 @@ To get the latest development version oysttyer, you can clone the [GitHub reposi
 
 Before you can get started, you should generate an API key. The key built in to oysttyer is frequently blocked by Twitter, so using your own key is adviseable.
 
-1. Log in to the (Twitter Application Management page)[https://apps.twitter.com/] with your Twitter user name and password
+1. Log in to the [Twitter Application Management page](https://apps.twitter.com/) with your Twitter user name and password
 2. Click *Create New App*
 3. Fill out the new app form:
     * Name -- The globally unique name for your application. We suggest something like "oysttyer (YourCoolTwitterHandle)"
@@ -72,7 +72,7 @@ Now that you have your keys, you can authorize oysttyer. Your key and secret can
 
 Similarly, the configuration file settings are `oauthkey` and `oauthsecret` for the Consumer Key and Consumer Secret respectively.
 
-A third option is to generate your token and secret from the Application Management website and write that directly to the .oysttyerkey file:
+A third option is to generate your token and secret from the Application Management website and write that directly to the `.oysttyerkey` file:
 
     ck=X&cs=X&at=YOUR_ACCESS_TOKEN&ats=YOUR_ACCESS_TOKEN_SECRET
 
@@ -81,7 +81,7 @@ A third option is to generate your token and secret from the Application Managem
 If you previously used TTYtter, you should find oysttyer very familiar. A few steps are necessary to make the switch:
 
 1. You have to re-authorise (you can't use your .ttytterkey) as we have a new API key
-2. Move/rename your .ttytterc file to .oysttyerrc
+2. Move/rename your `.ttytterc` file to `.oysttyerrc`
 3. If you use the ttytteristas pref it is now called oysttyeristas
 4. Read the [Changelog][changelog] to see what's new since TTYtter 2.1
 
