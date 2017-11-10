@@ -196,8 +196,22 @@ This section is not yet written
 
 <h2 id="configuration">Configuration</h2>
 
-This section is not yet written
+You can set many options using command line options:
+
+    $ perl ./oysttyer -ansi=1 -newline=1 -vcheck
+
+but these can also be set in a configuration file. The standard file is `~/.oysttyerrc`, but another one can be chosen using the `-f` command line option.
+
+The same options above can be written in the configuration file like this
+
+    ansi=1
+    newline=1
+    vcheck=1
+
+Use `#` to denote a comment.
+
+For security and portability, it's recommended that your Twitter credentials be kept in a separate file, `~/.oysttyerkey`. This file should be `chmod 600` (user read+write).
 
 <h2 id="contributing">Contributing</h2>
 
-This section is not yet written
+Development is done via GitHub, the [CONTRIBUTING](https://github.com/oysttyer/oysttyer/blob/master/CONTRIBUTING.markdown) document has details.
