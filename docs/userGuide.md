@@ -50,7 +50,7 @@ To get the latest development version oysttyer, you can clone the [GitHub reposi
 
 Before you can get started, you should generate an API key. The key built in to oysttyer is frequently blocked by Twitter, so using your own key is adviseable.
 
-1. Log in to the (Twitter Application Management page)[https://apps.twitter.com/] with your Twitter user name and password
+1. Log in to the [Twitter Application Management page](https://apps.twitter.com/) with your Twitter user name and password
 2. Click *Create New App*
 3. Fill out the new app form:
     * Name -- The globally unique name for your application. We suggest something like "oysttyer (YourCoolTwitterHandle)"
@@ -72,7 +72,7 @@ Now that you have your keys, you can authorize oysttyer. Your key and secret can
 
 Similarly, the configuration file settings are `oauthkey` and `oauthsecret` for the Consumer Key and Consumer Secret respectively.
 
-A third option is to generate your token and secret from the Application Management website and write that directly to the .oysttyerkey file:
+A third option is to generate your token and secret from the Application Management website and write that directly to the `.oysttyerkey` file:
 
     ck=X&cs=X&at=YOUR_ACCESS_TOKEN&ats=YOUR_ACCESS_TOKEN_SECRET
 
@@ -81,7 +81,7 @@ A third option is to generate your token and secret from the Application Managem
 If you previously used TTYtter, you should find oysttyer very familiar. A few steps are necessary to make the switch:
 
 1. You have to re-authorise (you can't use your .ttytterkey) as we have a new API key
-2. Move/rename your .ttytterc file to .oysttyerrc
+2. Move/rename your `.ttytterc` file to `.oysttyerrc`
 3. If you use the ttytteristas pref it is now called oysttyeristas
 4. Read the [Changelog][changelog] to see what's new since TTYtter 2.1
 
@@ -93,7 +93,7 @@ To start using oysttyer, run `perl ./oysttyer.pl` in the directory where you've 
 
     h8> <FunnelFiasco> I just really like writing documentation.
 
-Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a d and search results (including threads, `/again`, etc) which prepend a z.
+Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a `d` and search results (including threads, `/again`, etc) which prepend a `z`.
 
 The username may also be prepended with special characters that give you more information about a tweet.
 
@@ -123,21 +123,22 @@ Commands that return multiple responses default to 20, but that can be adjusted 
 
 will only give you your last 5 direct messages, instead of the last 20.
 
-<h4 id="commands-oysttyer">oysttyer commands<h4>
+<h4 id="commands-oysttyer">oysttyer commands</h4>
+
 <table>
 <tr><th>Command</th><th>Description</th></tr>
-<tr><td>/! *shell command*</td><td>Run *shell command* in a subprocess</td></tr>
-<tr><td>/add <em>key</em> <em>value</em></td><td>Add <em>value</em> to <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/! <em>shell command</em></td><td>Run <em>shell command</em> in a subprocess</td></tr>
+<tr><td>/add <em>key</em> <em>value</em></td><td>Add <em>value</em> to <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/cls</td><td>Clear the screen</td>
-<tr><td>/del <em>key</em> <em>value</em></td><td>Remove <em>value</em> from <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/del <em>key</em> <em>value</em></td><td>Remove <em>value</em> from <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/help</td><td>Display help</td></tr>
 <tr><td>/history</td><td>Display your command history</td></tr>
-<tr><td>/pop <em>key</em></td><td>Pop the first value off of <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/pop <em>key</em></td><td>Pop the first value off of <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/print <em>key</em></td><td>Display all settings (or the value of <em>key</em>, if specified)</td></tr>
-<tr><td>/push <em>key</em> <em>value</em></td><td>Push <em>value</em> onto the stack for <em>key</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/push <em>key</em> <em>value</em></td><td>Push <em>value</em> onto the stack for <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/ruler</td><td>Print a "ruler" of 140 characters</td></tr>
-<tr><td>/set <em>key</em> <em>value</em></td><td>Set <em>key</em> to <em>value</em> (see the [runtime configuration section](#runtime) for more information)</td></tr>
-<tr><td>/unset <em>key</em></td><td>Unsets <em>key</em>(see the [runtime configuration section](#runtime) for more information)</td></tr>
+<tr><td>/set <em>key</em> <em>value</em></td><td>Set <em>key</em> to <em>value</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
+<tr><td>/unset <em>key</em></td><td>Unsets <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)</td></tr>
 <tr><td>/vcheck</td><td>Check to see if you're running the latest version</td></tr>
 <tr><td>/quit</td><td>Exit oysttyer</td></tr>
 </table>
@@ -195,8 +196,22 @@ This section is not yet written
 
 <h2 id="configuration">Configuration</h2>
 
-This section is not yet written
+You can set many options using command line options:
+
+    $ perl ./oysttyer -ansi=1 -newline=1 -vcheck
+
+but these can also be set in a configuration file. The standard file is `~/.oysttyerrc`, but another one can be chosen using the `-f` command line option.
+
+The same options above can be written in the configuration file like this
+
+    ansi=1
+    newline=1
+    vcheck=1
+
+Use `#` to denote a comment.
+
+For security and portability, it's recommended that your Twitter credentials be kept in a separate file, `~/.oysttyerkey`. This file should be `chmod 600` (user read+write).
 
 <h2 id="contributing">Contributing</h2>
 
-This section is not yet written
+Development is done via GitHub, the [CONTRIBUTING](https://github.com/oysttyer/oysttyer/blob/master/CONTRIBUTING.markdown) document has details.
