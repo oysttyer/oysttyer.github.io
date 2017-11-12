@@ -10,12 +10,11 @@
      `\`. `    .....ˊ  %&#39;   
        `^~._.,,,.-+=~*&#39;                                            
             ````&#39;&#39;&#39;         
-                            
+
   _      _             _     
  /.\ | ||_  |_ |_ | | /_\|&#39;`                                 
  \_/ \_| _|&#39;|_&#39;|_ \_| \_ |                                   
-       |            |       
-       </code></pre>
+       |            |       </code></pre>
 <ul>
 <li><a href="#start">Getting started</a>
 <ul>
@@ -81,7 +80,7 @@ Switching from TTYTter
 <li>You have to re-authorise (you can't use your .ttytterkey) as we have a new API key</li>
 <li>Move/rename your .ttytterc file to .oysttyerrc</li>
 <li>If you use the ttytteristas pref it is now called oysttyeristas</li>
-<li>Read the Changelog to see what's new since TTYtter 2.1</li>
+<li>Read the <a href="https://github.com/oysttyer/oysttyer/blob/master/CHANGELOG.markdown">Changelog</a> to see what's new since TTYtter 2.1</li>
 </ol>
 <h2 id="usage">
 Basic usage
@@ -221,7 +220,7 @@ Pop the first value off of <em>key</em> (see the <a href="#runtime">runtime conf
 </tr>
 <tr>
 <td>
-/print <em>[key]</em>
+/print <em>key</em>
 </td>
 <td>
 Display all settings (or the value of <em>key</em>, if specified)
@@ -253,7 +252,7 @@ Set <em>key</em> to <em>value</em> (see the <a href="#runtime">runtime configura
 </tr>
 <tr>
 <td>
-/unset <em>[key]</em>
+/unset <em>key</em>
 </td>
 <td>
 Unsets <em>key</em>(see the <a href="#runtime">runtime configuration section</a> for more information)
@@ -306,7 +305,7 @@ Reply to all users in tweet <em>menu code</em>
 </tr>
 <tr>
 <td>
-/rt <em>menu code</em> <em>[message]</em>
+/rt <em>menu code</em> <em>message</em>
 </td>
 <td>
 Retweet tweet <em>menu code</em>. If a message is specified, quote tweet <em>menu code</em>
@@ -346,7 +345,7 @@ Displays the thread for tweet <em>menu code</em>
 </tr>
 <tr>
 <td>
-/again <em>[username]</em>
+/again <em>username</em>
 </td>
 <td>
 Displays the recent tweets for <em>username</em> (if none is specified, shows recent tweets in your timeline again)
@@ -488,6 +487,14 @@ List the current trending topics
 Display the URLs in tweet <em>menu code</em> and open in the application defined by the <code>urlopen</code> option
 </td>
 </tr>
+<tr>
+<td>
+/web <em>menu code</em>
+</td>
+<td>
+Display the URL to tweet <em>menu code</em>
+</td>
+</tr>
 </table>
 <h4 id="commands-user">
 User commands
@@ -566,7 +573,7 @@ Display information for <em>username</em>
 </tr>
 <tr>
 <td>
-/doesfollow <em>username</em> <em>[seconduser]</em>
+/doesfollow <em>username</em> <em>seconduser</em>
 </td>
 <td>
 Check if a user follows another (if a second account is not specified, it checks if the user follows you)
@@ -574,7 +581,7 @@ Check if a user follows another (if a second account is not specified, it checks
 </tr>
 <tr>
 <td>
-/friends <em>[username]</em>
+/friends <em>username</em>
 </td>
 <td>
 Get a list of the user's friends (if an account is not specified, it lists your friends)
@@ -582,7 +589,7 @@ Get a list of the user's friends (if an account is not specified, it lists your 
 </tr>
 <tr>
 <td>
-/followers <em>[username]</em>
+/followers <em>username</em>
 </td>
 <td>
 Get a list of the user's followers (if an account is not specified, it lists your followers)
