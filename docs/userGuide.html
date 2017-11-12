@@ -45,7 +45,7 @@ Generating your API key
 </h3>
 <p>Before you can get started, you should generate an API key. The key built in to oysttyer is frequently blocked by Twitter, so using your own key is adviseable.</p>
 <ol style="list-style-type: decimal">
-<li>Log in to the (Twitter Application Management page)[https://apps.twitter.com/] with your Twitter user name and password</li>
+<li>Log in to the <a href="https://apps.twitter.com/">Twitter Application Management page</a> with your Twitter user name and password</li>
 <li>Click <em>Create New App</em></li>
 <li>Fill out the new app form:
 <ul>
@@ -70,7 +70,7 @@ Generating your API key
 <p>Now that you have your keys, you can authorize oysttyer. Your key and secret can be passed on the command line or in your <a href="#configuration">configuration file</a>. An example of using it on the command line is:</p>
 <pre><code>perl ./oysttyer.pl -oauthkey=nZdXCxVtQTsFJaybAr9OjApd0 -oauthsecret=ujN4ilao663PyDDgObkk0N6EIbAxxxG7MGoK2Yq7nzLLfOxZjE</code></pre>
 <p>Similarly, the configuration file settings are <code>oauthkey</code> and <code>oauthsecret</code> for the Consumer Key and Consumer Secret respectively.</p>
-<p>A third option is to generate your token and secret from the Application Management website and write that directly to the .oysttyerkey file:</p>
+<p>A third option is to generate your token and secret from the Application Management website and write that directly to the <code>.oysttyerkey</code> file:</p>
 <pre><code>ck=X&amp;cs=X&amp;at=YOUR_ACCESS_TOKEN&amp;ats=YOUR_ACCESS_TOKEN_SECRET</code></pre>
 <h3 id="switching">
 Switching from TTYTter
@@ -78,7 +78,7 @@ Switching from TTYTter
 <p>If you previously used TTYtter, you should find oysttyer very familiar. A few steps are necessary to make the switch:</p>
 <ol style="list-style-type: decimal">
 <li>You have to re-authorise (you can't use your .ttytterkey) as we have a new API key</li>
-<li>Move/rename your .ttytterc file to .oysttyerrc</li>
+<li>Move/rename your <code>.ttytterc</code> file to <code>.oysttyerrc</code></li>
 <li>If you use the ttytteristas pref it is now called oysttyeristas</li>
 <li>Read the <a href="https://github.com/oysttyer/oysttyer/blob/master/CHANGELOG.markdown">Changelog</a> to see what's new since TTYtter 2.1</li>
 </ol>
@@ -87,7 +87,7 @@ Basic usage
 </h2>
 <p>To start using oysttyer, run <code>perl ./oysttyer.pl</code> in the directory where you've downloaded osytter.pl. Soon tweets start spewing forth. Each tweet is displayed with an menu code (internal to oysttyer) and the username. For example:</p>
 <pre><code>h8&gt; &lt;FunnelFiasco&gt; I just really like writing documentation.</code></pre>
-<p>Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a d and search results (including threads, <code>/again</code>, etc) which prepend a z.</p>
+<p>Menu codes are typically a letter followed by a single-digit number, except direct messages which prepend a <code>d</code> and search results (including threads, <code>/again</code>, etc) which prepend a <code>z</code>.</p>
 <p>The username may also be prepended with special characters that give you more information about a tweet.</p>
 <table id="decorators">
 <tr>
@@ -153,7 +153,7 @@ Commands
 <p>will only give you your last 5 direct messages, instead of the last 20.</p>
 <h4 id="commands-oysttyer">
 oysttyer commands
-<h4>
+</h4>
 <table>
 <tr>
 <th>
@@ -255,7 +255,7 @@ Set <em>key</em> to <em>value</em> (see the <a href="#runtime">runtime configura
 /unset <em>key</em>
 </td>
 <td>
-Unsets <em>key</em>(see the <a href="#runtime">runtime configuration section</a> for more information)
+Unsets <em>key</em> (see the <a href="#runtime">runtime configuration section</a> for more information)
 </td>
 </tr>
 <tr>
@@ -603,8 +603,16 @@ List commands
 <h2 id="configuration">
 Configuration
 </h2>
-<p>This section is not yet written</p>
+<p>You can set many options using command line options:</p>
+<pre><code>$ perl ./oysttyer -ansi=1 -newline=1 -vcheck</code></pre>
+<p>but these can also be set in a configuration file. The standard file is <code>~/.oysttyerrc</code>, but another one can be chosen using the <code>-f</code> command line option.</p>
+<p>The same options above can be written in the configuration file like this</p>
+<pre><code>ansi=1
+newline=1
+vcheck=1</code></pre>
+<p>Use <code>#</code> to denote a comment.</p>
+<p>For security and portability, it's recommended that your Twitter credentials be kept in a separate file, <code>~/.oysttyerkey</code>. This file should be <code>chmod 600</code> (user read+write).</p>
 <h2 id="contributing">
 Contributing
 </h2>
-<p>This section is not yet written</p>
+<p>Development is done via GitHub, the <a href="https://github.com/oysttyer/oysttyer/blob/master/CONTRIBUTING.markdown">CONTRIBUTING</a> document has details.</p>
