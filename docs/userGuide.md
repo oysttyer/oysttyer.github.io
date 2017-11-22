@@ -192,9 +192,17 @@ will only give you your last 5 direct messages, instead of the last 20.
 
 <h4 id="commands-list">List commands</h4>
 <table>
+<tr><td>/withlist <em>listname</em> <b>create</b> <b>(private|public)</b><em>text</em></tdn><td>Create your own list <em>listname</em>, and make it either private or public, <em>text</em> is an optional description of the created list</td></tr>
+<tr><td>/withlist <em>listname</em> <b>add</b> <em>username</em></tdn><td>Add user <em>username</em> to your own list <em>listname</em></td></tr>
+<tr><td>/withlist <em>listname</em> <b>delete</b> <em>username</em></tdn><td>Add user <em>username</em> to your own list <em>listname</em></td></tr>
+<tr><td>/withlist <em>listname</em> <b>list</b></em></tdn><td>Show who's on your list <em>listname</em></td></tr>
+<tr><td>/withlis, /withl, /with, /wl</tdn><td>Aliases for <code>/withlist</code></td></tr>
+<tr><td>/lists</tdn><td>Displays your lists</td></tr>
+<tr><td>/lists <em>username</em></tdn><td>Displays lists of the specified user <em>username</em></td></tr>
+<tr><td>/lists <em>username/listname</em></tdn><td>Displays who's on the specified list of the specified user <em>username</em></td></tr>
 <tr><td>/lfollow <em>listname</em></tdn><td>Start following <em>listname</em></td></tr>
 <tr><td>/lleave <em>listname</em></tdn><td>Stop following <em>listname</em></td></tr>
-<tr><td>/withlist <em>listname</em> create <em>(private|public)</em></tdn><td>Create your own list <em>listname</em>, and make it either private or public</td></tr>
+
 </table>
 
 
