@@ -200,8 +200,12 @@ will only give you your last 5 direct messages, instead of the last 20.
 <tr><td>/lists</tdn><td>Displays your lists</td></tr>
 <tr><td>/lists <em>username</em></tdn><td>Displays lists of the specified user <em>username</em></td></tr>
 <tr><td>/lists <em>username/listname</em></tdn><td>Displays who's on the specified list of the specified user <em>username</em></td></tr>
-<tr><td>/lfollow <em>listname</em></tdn><td>Start following <em>listname</em></td></tr>
+<tr><td>/lfollow <em>listname</em></tdn><td>Start following <em>listname</em> This only marks you as a follower, it does not actually add the list to your timeline</td></tr>
 <tr><td>/lleave <em>listname</em></tdn><td>Stop following <em>listname</em></td></tr>
+<tr><td>/liston <em>listname</em></tdn><td>Sets lists that are automatically queried and mixed with your timeline (You do not have to be following a list to add it to your timeline) </td></tr>
+<tr><td>/listoff <em>listname</em></tdn><td>Turn off showing tweets from that list in your timeline </td></tr>
+<tr><td>/followers <em>listname</em></td><td>Displays users who are marked as following the specified list</td></tr>
+
 
 </table>
 
