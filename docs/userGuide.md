@@ -194,7 +194,11 @@ will only give you your last 5 direct messages, instead of the last 20.
 <table>
 <tr><td>/lfollow <em>listname</em></tdn><td>Start following <em>listname</em></td></tr>
 <tr><td>/lleave <em>listname</em></tdn><td>Stop following <em>listname</em></td></tr>
+<<<<<<< HEAD
 <tr><td>/withlist <em>listname</em> create <em>(private|public)</em></tdn><td>Stop following <em>listname</em></td></tr>
+=======
+<tr><td>/withlist <em>listname</em> create <em>(private|public)</em></tdn><td>Create your own list  <em>listname</em>, and make it ither private or public</td></tr>
+>>>>>>> added
 </table>
 
 
