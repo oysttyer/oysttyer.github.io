@@ -226,6 +226,8 @@ some of the more useful ones are:
 <tr><td> -lat </td><td> latitude in decimal </td><td> -lat=-43.55522919 </td></tr>
 <tr><td> -long </td><td> longitude in decimal </td><td> -long=172.4193726  </td></tr>
 <tr><td> -script </td><td> Forces mode designed for being called via a script file, with minimal output </td><td> -script  </td></tr>
+<tr><td> -separator *string*</td><td> Separate refreshes by *string* to mark your place</td><td> -separator="X---x---X---x---X"</td></tr>
+<tr><td> -doublespace </td><td> Print an extra space after each tweet </td><td> -doublespace </td></tr>
 </table>
 
 <h2 id="configuration">Configuration</h2>
